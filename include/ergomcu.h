@@ -3,11 +3,11 @@
 
 #include <stdbool.h>
 #include <stdint.h>
+
 #include "ergo_settings.h"
 
 #ifdef __cplusplus
-extern "C"
-{
+extern "C" {
 #endif /* __cplusplus */
 
 #ifdef ERGO_USE_RTOS
@@ -21,15 +21,14 @@ extern "C"
 #define ERGO_DISABLE_INTERRUPTS taskENTER_CRITICAL()
 #define ERGO_RESTORE_INTERRUPTS taskEXIT_CRITICAL()
 #else /* bare metal */
-#define ERGO_DISABLE_INTERRUPTS                       \
-	bool interrupts_enabled = (__get_PRIMASK() == 0); \
-	__disable_irq();
+#define ERGO_DISABLE_INTERRUPTS                     \
+  bool interrupts_enabled = (__get_PRIMASK() == 0); \
+  __disable_irq();
 
 #define ERGO_RESTORE_INTERRUPTS \
-	if (interrupts_enabled)     \
-	{                           \
-		__enable_irq();         \
-	}
+  if (interrupts_enabled) {     \
+    __enable_irq();             \
+  }
 #endif
 
 #ifdef __cplusplus

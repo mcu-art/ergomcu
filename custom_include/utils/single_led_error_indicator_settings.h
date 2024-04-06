@@ -6,14 +6,14 @@ If you don't use those definitions in your project, comment this line out. */
 #include "main.h"
 
 #ifdef __cplusplus
-extern "C"
-{
+extern "C" {
 #endif /* __cplusplus */
 
 /* Define macros that switch the LED on and off.
 Example (in main.h):
-#define LedUser1_ON HAL_GPIO_WritePin(LedUser1_GPIO_Port, LedUser1_Pin, GPIO_PIN_SET)
-#define LedUser1_OFF HAL_GPIO_WritePin(LedUser1_GPIO_Port, LedUser1_Pin, GPIO_PIN_RESET)
+#define LedUser1_ON HAL_GPIO_WritePin(LedUser1_GPIO_Port, LedUser1_Pin,
+GPIO_PIN_SET) #define LedUser1_OFF HAL_GPIO_WritePin(LedUser1_GPIO_Port,
+LedUser1_Pin, GPIO_PIN_RESET)
 
 In this file:
 #define SL_INDICATOR_LED_ON LedUser1_ON

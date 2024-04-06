@@ -11,8 +11,7 @@
 #define MINUNIT_H
 
 #ifdef __cplusplus
-extern "C"
-{
+extern "C" {
 #endif
 
 #include <stdio.h>
@@ -23,28 +22,24 @@ extern "C"
 #define mu_suite_start() char *message = NULL
 
 #define mu_assert(message, test) \
-    do                           \
-    {                            \
-        if (!(test))             \
-        {                        \
-            log_err(message);    \
-            return message;      \
-        }                        \
-    } while (0)
+  do {                           \
+    if (!(test)) {               \
+      log_err(message);          \
+      return message;            \
+    }                            \
+  } while (0)
 
-#define mu_run_test(test)               \
-    do                                  \
-    {                                   \
-        printf("\n-----%s", " " #test); \
-        char *message = test();         \
-        tests_run++;                    \
-        if (message)                    \
-        {                               \
-            return message;             \
-        }                               \
-    } while (0)
+#define mu_run_test(test)           \
+  do {                              \
+    printf("\n-----%s", " " #test); \
+    char *message = test();         \
+    tests_run++;                    \
+    if (message) {                  \
+      return message;               \
+    }                               \
+  } while (0)
 
-    int tests_run;
+int tests_run;
 
 #ifdef __cplusplus
 }

@@ -2,11 +2,11 @@
 #define ERGO_SETTINGS_H
 
 #ifdef __cplusplus
-extern "C"
-{
+extern "C" {
 #endif /* __cplusplus */
 
-/* Select project operating system. If none selected, "bare metal" option is used. */
+/* Select project operating system. If none selected, "bare metal" option is
+ * used. */
 /* #define ERGO_USE_RTOS */
 
 #ifdef __cplusplus
